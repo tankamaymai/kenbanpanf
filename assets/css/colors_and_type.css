@@ -1,0 +1,256 @@
+/* ============================================================
+   ARCR Pamphlet Design System
+   腱板断裂術後パンフレット向けデザイントークン
+
+   Clean, calm, hospital-grade visual language.
+   Palette: medical blue + warm white + soft neutrals.
+   Typography: Noto Sans JP (body) + Noto Serif JP (display),
+   Inter for Latin numerals and acronyms (ARCR, ROM, etc).
+   ============================================================ */
+
+/* ---------- Web fonts ----------
+   Primary: UD デジタル教科書体 (Morisawa TypeSquare)
+   Contract ID: IWDDMHNB4FBTO
+   —
+   TypeSquare loads via <script> tag in <head>:
+     <script type="text/javascript"
+       src="//typesquare.com/3/tsst/script/ja/typesquare.js?IWDDMHNB4FBTO"
+       charset="utf-8"></script>
+   Fonts then resolve by family-name in this CSS (e.g. "UD デジタル教科書体 NP-R").
+   Fallback: BIZ UDPGothic (Google Fonts) for environments where TypeSquare
+   is not yet configured or the page is previewed offline.
+*/
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=BIZ+UDPMincho:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ---------------- COLOR: Brand ---------------- */
+  /* Primary is derived from the hospital K-logo blue */
+  --brand-primary:        #1F6FD0;   /* K-logo blue */
+  --brand-primary-hover:  #1A5FB5;
+  --brand-primary-press:  #164F97;
+  --brand-primary-soft:   #E8F1FC;   /* tinted background */
+  --brand-primary-edge:   #BBD4EF;   /* tinted border */
+
+  /* Secondary – warm accent used sparingly for patient warmth */
+  --brand-accent:         #E8A87C;   /* soft terracotta */
+  --brand-accent-soft:    #FBF1E8;
+
+  /* ---------------- COLOR: Neutrals ---------------- */
+  --neutral-0:    #FFFFFF;
+  --neutral-50:   #FAFBFC;   /* page bg */
+  --neutral-100:  #F3F5F8;   /* section bg */
+  --neutral-150:  #E9EDF2;
+  --neutral-200:  #DCE1E8;   /* hairline */
+  --neutral-300:  #C3CAD3;
+  --neutral-400:  #9AA3AF;
+  --neutral-500:  #6B7280;   /* caption */
+  --neutral-600:  #4B5563;   /* secondary text */
+  --neutral-700:  #374151;
+  --neutral-800:  #1F2937;   /* primary text */
+  --neutral-900:  #0F172A;
+
+  /* ---------------- COLOR: Semantic ---------------- */
+  --success:       #2E8F5A;
+  --success-soft:  #E6F4EC;
+  --warning:       #C47A1A;   /* caution, conservative not neon */
+  --warning-soft:  #FBF0DC;
+  --danger:        #C4392D;   /* stop / must-not-do */
+  --danger-soft:   #FBE8E6;
+  --info:          #1F6FD0;
+  --info-soft:     #E8F1FC;
+
+  /* ---------------- COLOR: Surfaces ---------------- */
+  --bg-page:       var(--neutral-50);
+  --bg-surface:    var(--neutral-0);
+  --bg-raised:     var(--neutral-0);
+  --bg-sunken:     var(--neutral-100);
+
+  /* ---------------- COLOR: Text ---------------- */
+  --fg-1:          var(--neutral-800);   /* primary body */
+  --fg-2:          var(--neutral-600);   /* secondary */
+  --fg-3:          var(--neutral-500);   /* captions / meta */
+  --fg-muted:      var(--neutral-400);
+  --fg-on-brand:   var(--neutral-0);
+  --fg-link:       var(--brand-primary);
+
+  /* ---------------- COLOR: Borders ---------------- */
+  --border-hair:   var(--neutral-200);
+  --border-edge:   var(--neutral-300);
+  --border-strong: var(--neutral-400);
+  --border-brand:  var(--brand-primary-edge);
+
+  /* ---------------- TYPOGRAPHY: Families ---------------- */
+  --font-sans-ja:    "UD デジタル教科書体 NP-R",
+                     "UD デジタル教科書体 N-R",
+                     "UD Digi Kyokasho NP-R",
+                     "UD Digi Kyokasho N-R",
+                     "UDデジタル教科書体",
+                     "BIZ UDPGothic",
+                     "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+                     "Yu Gothic UI", "Yu Gothic", Meiryo,
+                     system-ui, sans-serif;
+  --font-sans-ja-bold: "UD デジタル教科書体 NP-B",
+                       "UD デジタル教科書体 N-B",
+                       "UD Digi Kyokasho NP-B",
+                       "UD Digi Kyokasho N-B",
+                       var(--font-sans-ja);
+  --font-serif-ja:   "BIZ UDPMincho", "Hiragino Mincho ProN",
+                     "Yu Mincho", "游明朝", serif;
+  --font-sans-latin: "Inter", -apple-system, BlinkMacSystemFont,
+                     "Segoe UI", Roboto, sans-serif;
+  --font-mono:       "JetBrains Mono", ui-monospace, SFMono-Regular,
+                     Menlo, monospace;
+
+  /* Body leads with the Japanese UD Digital Kyokasho face —
+     patient legibility takes priority over Latin crispness */
+  --font-body:    var(--font-sans-ja), var(--font-sans-latin);
+  --font-display: var(--font-sans-ja), var(--font-sans-latin);
+  --font-serif:   var(--font-serif-ja);
+
+  /* ---------------- TYPE SCALE ---------------- */
+  /* Pamphlet is meant to be read by older patients — scales run large */
+  --fs-display:  40px;   /* cover titles */
+  --fs-h1:       30px;
+  --fs-h2:       24px;
+  --fs-h3:       20px;
+  --fs-h4:       17px;
+  --fs-body-l:   17px;   /* body default on paper */
+  --fs-body:     16px;
+  --fs-body-s:   14px;
+  --fs-caption:  13px;
+  --fs-label:    13px;
+
+  /* Line heights tuned for Japanese reading */
+  --lh-display:  1.25;
+  --lh-heading:  1.4;
+  --lh-body:     1.8;    /* generous for 日本語 長文 */
+  --lh-tight:    1.5;
+  --lh-data:     1.3;
+
+  /* Weights */
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-bold:    700;
+
+  /* ---------------- SPACING ---------------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* ---------------- RADIUS ---------------- */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+
+  /* ---------------- SHADOWS ---------------- */
+  /* Shadows are intentionally restrained — hospital trust signals */
+  --shadow-1: 0 1px 2px rgba(15, 23, 42, 0.04),
+              0 1px 1px rgba(15, 23, 42, 0.03);
+  --shadow-2: 0 2px 6px rgba(15, 23, 42, 0.05),
+              0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-3: 0 8px 24px rgba(15, 23, 42, 0.08),
+              0 2px 6px rgba(15, 23, 42, 0.04);
+  --shadow-focus: 0 0 0 3px rgba(31, 111, 208, 0.25);
+
+  /* ---------------- MOTION ---------------- */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur-base: 180ms;
+  --dur-slow: 280ms;
+}
+
+/* ============================================================
+   BASE + SEMANTIC ELEMENTS
+   Import jp-ui-contracts recipes conceptually — defaults below
+   ============================================================ */
+
+html:lang(ja), html {
+  line-break: strict;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  font-kerning: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size:   var(--fs-body);
+  line-height: var(--lh-body);
+  color:       var(--fg-1);
+  background:  var(--bg-page);
+  font-weight: var(--fw-regular);
+}
+
+/* Headings — tighter than body, lighter tracking */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--fg-1);
+  line-break: strict;
+  word-break: auto-phrase;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+
+h1 { font-size: var(--fs-h1); font-weight: var(--fw-bold);   line-height: var(--lh-heading); letter-spacing: 0.01em; }
+h2 { font-size: var(--fs-h2); font-weight: var(--fw-bold);   line-height: var(--lh-heading); letter-spacing: 0.01em; }
+h3 { font-size: var(--fs-h3); font-weight: var(--fw-bold);   line-height: var(--lh-heading); letter-spacing: 0.01em; }
+h4 { font-size: var(--fs-h4); font-weight: var(--fw-medium); line-height: var(--lh-heading); letter-spacing: 0.01em; }
+
+p {
+  margin: 0 0 var(--space-4);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg-1);
+  max-width: 38em;
+}
+
+/* utility text roles */
+.text-caption { font-size: var(--fs-caption); color: var(--fg-3); line-height: var(--lh-tight); }
+.text-label   { font-size: var(--fs-label);   color: var(--fg-2); font-weight: var(--fw-medium); letter-spacing: 0.02em; }
+.text-meta    { font-size: var(--fs-caption); color: var(--fg-3); }
+.text-data    { font-family: var(--font-sans-latin); font-variant-numeric: tabular-nums; line-height: var(--lh-data); }
+
+a {
+  color: var(--fg-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+a:hover { color: var(--brand-primary-hover); }
+
+/* Japanese body recipe — copied from jp-ui-contracts */
+p, li, dd {
+  line-break: strict;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Mixed-script safety */
+em, strong, a, .latin, .product-name {
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Don't let body text letter-space aggressively — contract rule */
+p, li, dd { letter-spacing: 0.01em; }
+
+/* form elements stay legible */
+label, input, textarea, select, button {
+  line-break: strict;
+  word-break: normal;
+}
+input, textarea, select { line-height: 1.5; }

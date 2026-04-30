@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" role="img" aria-label="Hospital K logo">
+  <ellipse cx="100" cy="80" rx="92" ry="72" fill="#1F6FD0"></ellipse>
+  
+  <g fill="#FFFFFF">
+    
+    <path d="M62 28 L86 28 L78 132 L54 132 Z"></path>
+    
+    <path d="M92 60 C 118 34, 138 30, 156 34 C 140 46, 120 62, 104 82 Z"></path>
+    
+    <path d="M96 86 C 122 92, 140 108, 146 128 C 128 122, 110 112, 92 100 Z"></path>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+---
+description: 腱板断裂パンフレットのUI/CSSデザイン変更時は DESIGN.md を必ず参照する
+globs: pamphlet.html,pamphlet.css,src/**/*.jsx,assets/css/**/*.css
+alwaysApply: false
+---
+
+# パンフレットデザインの単一参照源
+
+`pamphlet.html` を中心とする腱板断裂術後パンフレットの**レイアウト・色・タイポ・コンポーネント仕様**を変更・追加するときは、作業開始前にリポジトリ直下の **DESIGN.md**（`pamphlet.html` と同一階層）を読み、記載のトークン・パターン・注意点（ティール上書き、A4/印刷、既存クラス優先）に従うこと。
+
+新規スタイルを足す場合も **DESIGN.md と `pamphlet.css` / `assets/css/colors_and_type.css` の変数**を基準にし、独自の散らばった hex を増やさないこと。

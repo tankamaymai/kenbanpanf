@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>腱板断裂 術後パンフレット｜新小文字病院 整形外科</title>
+  <link rel="stylesheet" href="assets/css/colors_and_type.css" />
+  <link rel="stylesheet" href="assets/css/ja-text.css" />
+  <link rel="stylesheet" href="assets/css/headings.css" />
+  <link rel="stylesheet" href="assets/css/mixed-script.css" />
+  <link rel="stylesheet" href="pamphlet.css" />
+
+  <!-- Dynamic asset dependencies -->
+  <meta name="ext-resource-dependency" content="assets/img/logo-official.png" data-resource-id="logo" />
+  <meta name="ext-resource-dependency" content="assets/img/brace-front.jpg" data-resource-id="braceFront" />
+  <meta name="ext-resource-dependency" content="assets/img/brace-front2.jpg" data-resource-id="braceFront2" />
+  <meta name="ext-resource-dependency" content="assets/img/brace-side.jpg" data-resource-id="braceSide" />
+  <meta name="ext-resource-dependency" content="assets/img/brace-side2.jpg" data-resource-id="braceSide2" />
+  <meta name="ext-resource-dependency" content="assets/img/brace-side3.jpg" data-resource-id="braceSide3" />
+  <meta name="ext-resource-dependency" content="assets/img/brace-back.jpg" data-resource-id="braceBack" />
+  <meta name="ext-resource-dependency" content="assets/img/brace-ng.jpg" data-resource-id="braceNg" />
+  <meta name="ext-resource-dependency" content="assets/img/wound.jpg" data-resource-id="wound" />
+  <meta name="ext-resource-dependency" content="assets/img/sleep-supine.jpg" data-resource-id="sleepSupine" />
+  <meta name="ext-resource-dependency" content="assets/img/sleep-gatch.jpg" data-resource-id="sleepGatch" />
+  <meta name="ext-resource-dependency" content="assets/img/sleep-side.jpg" data-resource-id="sleepSide" />
+  <meta name="ext-resource-dependency" content="assets/img/dressing-1.jpg" data-resource-id="dressing1" />
+  <meta name="ext-resource-dependency" content="assets/img/dressing-2.jpg" data-resource-id="dressing2" />
+  <meta name="ext-resource-dependency" content="assets/img/dressing-3.jpg" data-resource-id="dressing3" />
+  <meta name="ext-resource-dependency" content="assets/img/bag-use.jpg" data-resource-id="bagUse" />
+  <meta name="ext-resource-dependency" content="assets/img/anatomy-front-bone.jpg" data-resource-id="anatFrontBone" />
+  <meta name="ext-resource-dependency" content="assets/img/anatomy-front-muscle.jpg" data-resource-id="anatFrontMuscle" />
+  <meta name="ext-resource-dependency" content="assets/img/anatomy-back-muscle.jpg" data-resource-id="anatBackMuscle" />
+
+  <!-- Bundler thumbnail -->
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+      <rect width="200" height="280" fill="#EAF4F2"/>
+      <rect x="0" y="0" width="200" height="8" fill="#2E8B7A"/>
+      <rect x="16" y="28" width="38" height="38" rx="6" fill="#2E8B7A"/>
+      <text x="35" y="52" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="900" fill="#fff">01</text>
+      <rect x="62" y="28" width="122" height="38" rx="6" fill="#d4f0ea"/>
+      <rect x="16" y="80" width="168" height="8" rx="3" fill="#2E8B7A" opacity=".3"/>
+      <rect x="16" y="96" width="168" height="6" rx="3" fill="#ccc"/>
+      <rect x="16" y="108" width="120" height="6" rx="3" fill="#ccc"/>
+      <rect x="16" y="130" width="78" height="56" rx="6" fill="#d4f0ea"/>
+      <rect x="104" y="130" width="80" height="56" rx="6" fill="#d4f0ea"/>
+      <rect x="16" y="196" width="168" height="40" rx="6" fill="#EAF4F2" stroke="#A8D5CE" stroke-width="1.5"/>
+      <rect x="16" y="246" width="168" height="2" fill="#A8D5CE"/>
+      <text x="100" y="265" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#2E8B7A" font-weight="700">腱板断裂 術後パンフレット</text>
+    </svg>
+  </template>
+
+  <!-- React + Babel (production builds for smaller bundle) -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Component files (babel-transpiled, in dependency order) -->
+  <script type="text/babel" src="src/primitives.jsx"></script>
+  <script type="text/babel" src="src/covers.jsx"></script>
+  <script type="text/babel" src="src/pages-intro.jsx"></script>
+  <script type="text/babel" src="src/pages-brace.jsx"></script>
+  <script type="text/babel" src="src/pages-daily.jsx"></script>
+  <script type="text/babel" src="src/pages-rehab.jsx"></script>
+  <script type="text/babel" src="src/pages-qa.jsx"></script>
+  <script type="text/babel" src="src/pages-back.jsx"></script>
+  <script type="text/babel" src="src/tweaks.jsx"></script>
+  <script type="text/babel" src="src/app.jsx"></script>
+</body>
+</html>

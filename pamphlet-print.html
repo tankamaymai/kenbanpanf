@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>腱板断裂 術後パンフレット｜新小文字病院 整形外科</title>
+  <link rel="stylesheet" href="assets/css/colors_and_type.css" />
+  <link rel="stylesheet" href="assets/css/ja-text.css" />
+  <link rel="stylesheet" href="assets/css/headings.css" />
+  <link rel="stylesheet" href="assets/css/mixed-script.css" />
+  <link rel="stylesheet" href="pamphlet.css" />
+
+  <style>
+    /* ---- PRINT OVERRIDES ---- */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      html, body {
+        background: #fff !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+        width: 210mm !important;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      /* Hide screen-only elements */
+      .topbar,
+      .tweaks-panel,
+      .tweaks-toggle,
+      .no-print {
+        display: none !important;
+      }
+
+      /* Each page = one A4 sheet */
+      .page {
+        width: 210mm !important;
+        height: 297mm !important;
+        min-height: 0 !important;
+        max-height: 297mm !important;
+        padding: 14mm 16mm 20mm !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+        display: block !important;
+      }
+      .page:last-of-type {
+        page-break-after: auto !important;
+        break-after: auto !important;
+      }
+
+      /* Cover variants */
+      .cover { padding: 0 !important; }
+      .cover-v1 .top  { padding: 14mm 16mm 0 !important; }
+      .cover-v1 .main { padding: 28mm 16mm 0 !important; }
+      .cover-v1 .foot { padding: 0 16mm 12mm !important; }
+      .cover-v2 .body { padding: 10mm 16mm 12mm !important; }
+      .cover-v3 .left { padding: 14mm 8mm 12mm 16mm !important; }
+      .cover-v3 .right { padding: 14mm 16mm 12mm 8mm !important; }
+      .cover-v3 .grid { min-height: 297mm !important; }
+
+      /* Page footer */
+      .page-foot {
+        left: 16mm !important;
+        right: 16mm !important;
+        bottom: 8mm !important;
+      }
+
+      /* Leaf corners — keep but reduce opacity */
+      .leaf-corner { opacity: 0.12 !important; }
+
+      /* Ward page background */
+      .ward-page { background: linear-gradient(160deg, #EEF7FF 0%, #fff 50%) !important; }
+
+      /* Prevent breaks inside key components */
+      .callout,
+      .ex-card,
+      .timeline-step,
+      .okng-card,
+      .ward-sec01,
+      .ward-row,
+      .dress-col,
+      .ward-video-box,
+      .p4-risk-grid,
+      .p4-advice-card,
+      .okng-layout,
+      .photo-step,
+      .qa-item {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      /* Prevent orphaned headings */
+      h1, h2, h3, .page-head, .ward-sec, .p4-chapter-badge {
+        break-after: avoid !important;
+        page-break-after: avoid !important;
+      }
+
+      /* Fix: remove screen flex layout from body */
+      body {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0 !important;
+      }
+    }
+  </style>
+
+  <!-- React + Babel -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Component files -->
+  <script type="text/babel" src="src/primitives.jsx"></script>
+  <script type="text/babel" src="src/covers.jsx"></script>
+  <script type="text/babel" src="src/pages-intro.jsx"></script>
+  <script type="text/babel" src="src/pages-brace.jsx"></script>
+  <script type="text/babel" src="src/pages-daily.jsx"></script>
+  <script type="text/babel" src="src/pages-rehab.jsx"></script>
+  <script type="text/babel" src="src/pages-qa.jsx"></script>
+  <script type="text/babel" src="src/pages-back.jsx"></script>
+  <script type="text/babel" src="src/tweaks.jsx"></script>
+  <script type="text/babel" src="src/app.jsx"></script>
+
+  <!-- Auto-print: wait for Babel + React + fonts, then print -->
+  <script type="text/babel">
+    (function() {
+      const check = setInterval(() => {
+        if (document.querySelector('.page')) {
+          clearInterval(check);
+          document.fonts.ready.then(() => {
+            setTimeout(() => window.print(), 1200);
+          });
+        }
+      }, 100);
+    })();
+  </script>
+</body>
+</html>
