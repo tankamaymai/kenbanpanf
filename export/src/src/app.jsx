@@ -5,8 +5,8 @@
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "cover": "editorial",
   "okngStyle": "soft",
-  "bodySize": 17,
-  "lineHeight": 1.85,
+  "bodySize": 16,
+  "lineHeight": 1.62,
   "accent": "teal"
 }/*EDITMODE-END*/;
 
@@ -19,7 +19,7 @@ const accentMap = {
 const TopBar = ({ onToggleTweaks, tweaksOn }) => (
   <div className="topbar no-print">
     <div className="topbar-inner" style={{justifyContent:"center"}}>
-      <img className="topbar-logo" src={window.__resources.logo} alt="" style={{objectFit:"contain", height:"32px", width:"auto"}}/>
+      <img className="topbar-logo" src="assets/img/logo.svg" alt="" style={{objectFit:"contain", height:"32px", width:"auto"}}/>
       <div>
         <div className="topbar-title">腱板断裂 術後パンフレット</div>
         <div className="topbar-sub">Rotator Cuff Repair · Patient Guide</div>
@@ -75,6 +75,40 @@ function App() {
     document.body.className = bodyCls;
   }, [bodyCls]);
 
+  React.useEffect(() => {
+    const replaceMissingImage = (img) => {
+      if (!img || img.dataset.missingHandled === "true") return;
+      img.dataset.missingHandled = "true";
+
+      const label = img.getAttribute("alt") || img.dataset.fallbackLabel || "PHOTO";
+      const placeholder = document.createElement("div");
+      placeholder.className = ("generated-photo-ph " + (img.className || "")).trim();
+      placeholder.setAttribute("role", "img");
+      placeholder.setAttribute("aria-label", label);
+      placeholder.style.cssText = img.style.cssText;
+      const text = document.createElement("span");
+      text.textContent = label;
+      placeholder.appendChild(text);
+
+      img.replaceWith(placeholder);
+    };
+
+    const onImageError = (event) => {
+      if (event.target instanceof HTMLImageElement) {
+        replaceMissingImage(event.target);
+      }
+    };
+
+    document.addEventListener("error", onImageError, true);
+    requestAnimationFrame(() => {
+      document.querySelectorAll("img").forEach((img) => {
+        if (img.complete && img.naturalWidth === 0) replaceMissingImage(img);
+      });
+    });
+
+    return () => document.removeEventListener("error", onImageError, true);
+  }, []);
+
   return (
     <>
       <TopBar />
@@ -84,13 +118,9 @@ function App() {
       <PagePathology />
       <PageSurgery />
       <PageBraceRules />
-      <PageBraceFit />
-      <PageBraceBack />
-      <PageSleep />
       <PageTurnOver />
       <PageDressing />
       <PageBag />
-      <PagePocket />
       <PageLaundry />
       <PageRehab1 />
       <PageRehab2 />

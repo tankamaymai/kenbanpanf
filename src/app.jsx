@@ -5,8 +5,8 @@
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "cover": "editorial",
   "okngStyle": "soft",
-  "bodySize": 17,
-  "lineHeight": 1.85,
+  "bodySize": 16,
+  "lineHeight": 1.62,
   "accent": "teal"
 }/*EDITMODE-END*/;
 
@@ -115,12 +115,8 @@ function App() {
       <Cover />
       <PageHello />
       <PageAnatomy />
-      <PagePathology />
       <PageSurgery />
       <PageBraceRules />
-      <PageBraceFit />
-      <PageBraceBack />
-      <PageSleep />
       <PageTurnOver />
       <PageDressing />
       <PageBag />

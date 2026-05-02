@@ -3,7 +3,7 @@
    Exposed on window so other Babel script files can use them.
    ========================================================= */
 
-const Page = ({ num, total = 18, kicker, title, children, sectionLabel, style, className = "" }) => (
+const Page = ({ num, total = 15, kicker, title, children, sectionLabel, style, className = "" }) => (
   <section
     className={"page " + className}
     data-screen-label={`${String(num).padStart(2,"0")} ${title || kicker || ""}`}
@@ -100,9 +100,13 @@ const OKNGPair = ({ okSrc, okCap, okList, ngSrc, ngCap, ngList, okLabel = "OK", 
   </div>
 );
 
-const PhotoCard = ({ src, title, children, ratio = "4/3", objectPosition = "center 30%" }) => (
-  <figure className="photo-card">
-    <img src={src} alt={title || ""} style={{aspectRatio: ratio, objectPosition}}/>
+const PhotoCard = ({ src, title, children, ratio = "4/3", objectPosition = "center 30%", fill = false }) => (
+  <figure className={"photo-card" + (fill ? " photo-card--fill" : "")}>
+    <img
+      src={src}
+      alt={title || ""}
+      style={fill ? { objectPosition } : { aspectRatio: ratio, objectPosition }}
+    />
     <figcaption className="cap">
       {title && <span className="ttl">{title}</span>}
       {children}

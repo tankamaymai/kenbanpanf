@@ -1,12 +1,10 @@
 /* =========================================================
-   P06 — 外転枕の役割とルール
-   P07 — 外転枕の装着方法（OK/NG 正面・側面）
-   P08 — 外転枕の装着方法（背面・脱着手順）
+   P06 — 外転枕（役割・ルール・OK/NG 装着）
    ========================================================= */
 
 /* ---- 共通：チャプターバッジ + 大タイトルブロック ---- */
 const BracePageHero = ({ chNum, title, sub }) => (
-  <div style={{marginBottom:14}}>
+  <div className="brace-page-hero-wrap">
     <div className="p4-chapter-badge">
       <div className="ch-ring">
         <span className="ch-label">チャプター</span>
@@ -25,9 +23,11 @@ const PhotoStrip3 = ({ photos }) => (
   <div className="photo-strip-3">
     {photos.map((p, i) => (
       <div key={i} className="ps3-item">
-        {p.src
-          ? <img src={p.src} alt={p.label} />
-          : <div className="ps3-ph">{p.placeholder || "PHOTO"}</div>}
+        <div className="ps3-visual">
+          {p.src
+            ? <img src={p.src} alt={p.label} />
+            : <div className="ps3-ph">{p.placeholder || "PHOTO"}</div>}
+        </div>
         <span className="ps3-label">{p.label}</span>
       </div>
     ))}
@@ -50,87 +50,83 @@ const OKNGPoints = ({ items, tone }) => (
 );
 
 /* ====================================================
-   P06 — 外転枕の役割とルール
+   P06 — 外転枕（役割・ルール・OK/NG 装着）1枚構成
    ==================================================== */
 const PageBraceRules = () => (
-  <Page num={6} kicker="CHAPTER 05 ／ 外転枕" title="装具はこの位置でつけましょう">
-    <Lead>外転枕の役割と、守っていただきたいルール</Lead>
+  <Page num={5} kicker="CHAPTER 04 ／ 外転枕" title="装具はこの位置でつけましょう" className="page-brace-combined page-brace-fit">
+    <Lead>
+      外転枕の役割とルール、続けて正しい装着の目安（OK／NG）です。
+    </Lead>
 
-    {/* 装具の役割説明 */}
-    <div className="p4-advice-card" style={{marginBottom:14}}>
+    <div className="p4-advice-card brace-combo-advice">
       <div className="av-icon">🛡</div>
-      <div className="av-text" style={{fontSize:16}}>
+      <div className="av-text">
         外転枕は、修復した腱に負担がかからないよう<br/>
         <strong>肩を「少しだけ外にひらいた位置」</strong>で休ませるための装具です。
       </div>
     </div>
 
-    {/* ルールリスト */}
-    <div className="p4-section-label"><span>外転枕 装着中のルール</span></div>
-
-    <div style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap:10, marginBottom:14}}>
-      <div>
-        <ul className="okng-points" style={{border:"2px solid var(--brand-primary)", borderRadius:8, padding:"10px 12px"}}>
-          {[
-            {title:"起きている間・寝ている間どちらも装着"},
-            {title:"外してよいのは入浴中とリハビリ中のみ"},
-            {title:"ベルトのマジックテープはしっかり留める"},
-          ].map((it,i) => (
-            <li key={i} style={{display:"flex",alignItems:"flex-start",gap:8,fontSize:13,lineHeight:1.55,marginBottom:6}}>
-              <span style={{width:22,height:22,borderRadius:"50%",background:"var(--brand-primary)",color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,fontWeight:700,flex:"none"}}>✓</span>
-              <span style={{fontWeight:700}}>{it.title}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <ul className="okng-points" style={{border:"2px solid #E05A6A", borderRadius:8, padding:"10px 12px"}}>
-          {[
-            {title:"装具を外したまま、手術した腕を動かさない"},
-            {title:"重いものを持たない・つり革をつかまない"},
-            {title:"自己判断で装具を外さない"},
-          ].map((it,i) => (
-            <li key={i} style={{display:"flex",alignItems:"flex-start",gap:8,fontSize:13,lineHeight:1.55,marginBottom:6}}>
-              <span style={{width:22,height:22,borderRadius:"50%",background:"#E05A6A",color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,fontWeight:700,flex:"none"}}>✗</span>
-              <span style={{fontWeight:700}}>{it.title}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-
-    {/* 写真 */}
-    <div style={{marginBottom:10}}>
+    <div className="brace-rules-fig-wrap">
       <div className="p4-section-label"><span>装具の全体像</span></div>
-      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
-        <figure style={{margin:0}}>
-          <img src="assets/img/brace-front.jpg" alt="外転枕 正面" style={{width:"100%",height:180,objectFit:"cover",objectPosition:"center top",borderRadius:8,display:"block"}}/>
-          <figcaption style={{textAlign:"center",fontSize:12,color:"var(--fg-2)",marginTop:4,fontWeight:600}}>正面</figcaption>
+      <div className="brace-rules-fig-grid">
+        <figure className="brace-overview-figure">
+          <img className="brace-overview-photo" src="assets/img/brace-front.jpg" alt="外転枕 正面"/>
+          <figcaption className="brace-fig-cap">正面</figcaption>
         </figure>
-        <figure style={{margin:0}}>
-          <img src="assets/img/brace-side.jpg" alt="外転枕 側面" style={{width:"100%",height:180,objectFit:"cover",objectPosition:"center top",borderRadius:8,display:"block"}}/>
-          <figcaption style={{textAlign:"center",fontSize:12,color:"var(--fg-2)",marginTop:4,fontWeight:600}}>側面</figcaption>
+        <figure className="brace-overview-figure">
+          <img className="brace-overview-photo" src="assets/img/brace-side.jpg" alt="外転枕 側面"/>
+          <figcaption className="brace-fig-cap">側面</figcaption>
         </figure>
       </div>
     </div>
 
-    <div className="safety-point-box">
-      <div className="sp-badge">安全<br/>ポイント</div>
-      <div className="sp-text">装具を外した時は、反対の手でひじを軽く支え、手術した腕を体の横に沿わせたままにしましょう。</div>
+    <div className="p4-section-label brace-combo-sec"><span>外転枕 装着中のルール</span></div>
+
+    <div className="brace-wear-rules" role="region" aria-label="装着中のルール">
+      <div className="brace-wear-rules-inner">
+        <div className="brace-wear-rules-col brace-wear-rules-col--do">
+          <h3 className="brace-wear-rules-heading">
+            <span className="brace-wear-rules-heading-mark brace-wear-rules-heading-mark--ok" aria-hidden="true">✓</span>
+            守ること
+          </h3>
+          <ul className="brace-wear-rules-list">
+            {[
+              "起きている間・寝ている間どちらも装着",
+              "外してよいのは入浴中とリハビリ中のみ",
+              "ベルトのマジックテープはしっかり留める",
+            ].map((t, i) => (
+              <li key={i} className="brace-wear-rules-li">
+                <span className="brace-wear-rules-icon brace-wear-rules-icon--ok" aria-hidden="true">✓</span>
+                <span className="brace-wear-rules-text">{t}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="brace-wear-rules-gutter" aria-hidden="true" />
+        <div className="brace-wear-rules-col brace-wear-rules-col--dont">
+          <h3 className="brace-wear-rules-heading">
+            <span className="brace-wear-rules-heading-mark brace-wear-rules-heading-mark--ng" aria-hidden="true">✗</span>
+            やってはいけないこと
+          </h3>
+          <ul className="brace-wear-rules-list">
+            {[
+              "装具を外したまま、手術した腕を動かさない",
+              "重いものを持たない・つり革をつかまない",
+              "自己判断で装具を外さない",
+            ].map((t, i) => (
+              <li key={i} className="brace-wear-rules-li">
+                <span className="brace-wear-rules-icon brace-wear-rules-icon--ng" aria-hidden="true">✗</span>
+                <span className="brace-wear-rules-text">{t}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
 
-  </Page>
-);
-
-/* ====================================================
-   P07 — OK/NG 正面・側面
-   ==================================================== */
-const PageBraceFit = () => (
-  <Page num={7} kicker="CHAPTER 05 ／ 外転枕" title="装具はこの位置でつけましょう">
-    <Lead>外転枕の正しいつけ方</Lead>
+    <div className="p4-section-label brace-combo-sec brace-okng-section"><span>正しいつけ方（OK／NG）</span></div>
 
     <div className="okng-layout">
-      {/* OK列 */}
       <div className="okng-col ok">
         <div className="okng-col-header">OK ○</div>
         <PhotoStrip3 photos={[
@@ -144,7 +140,6 @@ const PageBraceFit = () => (
           { title:"ベルトがねじれていない", desc:"肩・背中・腹ベルトがまっすぐで、ねじれがありません。" },
         ]}/>
       </div>
-      {/* NG列 */}
       <div className="okng-col ng">
         <div className="okng-col-header">NG ✕</div>
         <PhotoStrip3 photos={[
@@ -160,70 +155,15 @@ const PageBraceFit = () => (
       </div>
     </div>
 
-    <div className="safety-point-box">
+    <div className="safety-point-box brace-combo-safety">
       <div className="sp-badge">安全<br/>ポイント</div>
-      <div className="sp-text">迷った時は、自分で調整しますスタッフに確認しましょう。</div>
+      <div className="sp-text">
+        装具を外した時は、反対の手でひじを軽く支え、手術した腕を体の横に沿わせたままにしましょう。
+        <br/>
+        迷った時は、無理せずスタッフに確認しましょう。
+      </div>
     </div>
-
   </Page>
 );
 
-/* ====================================================
-   P08 — 背面チェック・着脱手順
-   ==================================================== */
-const PageBraceBack = () => (
-  <Page num={8} kicker="CHAPTER 05 ／ 外転枕" title="着脱の手順">
-    <Lead>外転枕の正しい着け外しかた</Lead>
-
-    <div style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap:16, alignItems:"start"}}>
-      <div>
-        <div className="p4-section-label"><span>背面チェックポイント</span></div>
-        <figure style={{margin:"0 0 10px"}}>
-          <img src="assets/img/brace-back.jpg" alt="外転枕 背面" style={{width:"100%",height:200,objectFit:"cover",objectPosition:"center top",borderRadius:8,display:"block"}}/>
-        </figure>
-        <ul className="okng-points" style={{border:"2px solid var(--brand-primary)",borderRadius:8,padding:"10px 12px"}}>
-          {[
-            {title:"肩ベルトがねじれていない"},
-            {title:"胴ベルトが水平"},
-            {title:"外転枕が傾いていない"},
-            {title:"手先にしびれ・冷たさがない"},
-          ].map((it,i) => (
-            <li key={i} style={{display:"flex",alignItems:"flex-start",gap:8,fontSize:13,lineHeight:1.55,marginBottom:4}}>
-              <span style={{width:22,height:22,borderRadius:"50%",background:"var(--brand-primary)",color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,fontWeight:700,flex:"none"}}>✓</span>
-              <span style={{fontWeight:700}}>{it.title}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <div className="p4-section-label"><span>着脱の手順</span></div>
-        <div style={{display:"flex",flexDirection:"column",gap:8}}>
-          {[
-            {n:"1", title:"外転枕を平らな場所に置く", desc:"手術した腕をそっと乗せ、反対の手でひじを支える。"},
-            {n:"2", title:"胴ベルトを水平に巻く", desc:"一周させてマジックテープで留める。指が1本入るくらい。"},
-            {n:"3", title:"肩ベルトを背中へ", desc:"反対の手で背中を通して前のバックルへ。高さを整える。"},
-            {n:"4", title:"ボールを握って確認", desc:"しびれ・冷たさがないかチェックして完了。"},
-          ].map((s,i) => (
-            <div key={i} style={{display:"flex",gap:10,alignItems:"flex-start",background:"var(--neutral-50)",borderRadius:8,padding:"10px 12px",border:"1px solid var(--border-hair)"}}>
-              <span style={{width:26,height:26,borderRadius:"50%",background:"var(--brand-primary)",color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"var(--font-sans-latin)",fontWeight:800,fontSize:13,flex:"none"}}>
-                {s.n}
-              </span>
-              <div>
-                <div style={{fontWeight:700,fontSize:13,color:"var(--neutral-900)",marginBottom:2}}>{s.title}</div>
-                <div style={{fontSize:12,color:"var(--fg-2)",lineHeight:1.55}}>{s.desc}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-
-    <div className="safety-point-box" style={{marginTop:12}}>
-      <div className="sp-badge">安全<br/>ポイント</div>
-      <div className="sp-text">急いで外すとバランスを崩します。必ず<strong>肘を支えたまま</strong>、ゆっくり外してください。入浴時はご家族に手伝っていただくと安心です。</div>
-    </div>
-
-  </Page>
-);
-
-Object.assign(window, { PageBraceRules, PageBraceFit, PageBraceBack });
+Object.assign(window, { PageBraceRules });

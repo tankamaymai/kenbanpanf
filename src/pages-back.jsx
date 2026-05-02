@@ -1,9 +1,9 @@
 /* =========================================================
-   P13 — 受診の目安・連絡先・チェックリスト (back cover)
+   P16 — 受診の目安・連絡先・チェックリスト (back cover)
    ========================================================= */
 
 const PageBack = () => (
-  <Page num={18} kicker="裏表紙 ／ 緊急時と連絡先" title="こんな時は、すぐ連絡してください">
+  <Page num={14} kicker="裏表紙 ／ 緊急時と連絡先" title="こんな時は、すぐ連絡してください" className="page-back-fit">
     <Lead>
       手術後は、なにか起きた時にひとりで悩まないことがいちばん大切です。
       下のサインが出たら、様子をみずに、すぐに当院までご連絡ください。
@@ -54,7 +54,7 @@ const PageBack = () => (
       "不安なこと・聞き忘れたことをメモしたか",
     ]}/>
 
-    <div style={{marginTop:24, paddingTop:18, borderTop:"1px solid var(--border-hair)", display:"flex", alignItems:"center", gap:14}}>
+    <div style={{marginTop:12, paddingTop:12, borderTop:"1px solid var(--border-hair)", display:"flex", alignItems:"center", gap:12}}>
       <img src="assets/img/logo.svg" alt="仁誠会" style={{height:32}}/>
       <div style={{fontSize:12, color:"var(--fg-3)", lineHeight:1.7}}>
         <strong style={{color:"var(--fg-1)"}}>新小文字病院 整形外科</strong> ／ リハビリテーション科　

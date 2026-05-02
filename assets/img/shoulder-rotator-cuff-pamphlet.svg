@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+  <title id="title">肩関節と腱板（インナーマッスル）の模式図</title>
+  <desc id="desc">パンフレット用の簡略化された肩の前面図と背面図。棘上筋・棘下筋・小円筋・肩甲下筋の位置を色分けして示す。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafb"/>
+      <stop offset="100%" style="stop-color:#eef5f4"/>
+    </linearGradient>
+    <filter id="soft" x="-8%" y="-8%" width="116%" height="116%">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="520" fill="url(#bg)"/>
+  <!-- 正面図ラベル領域（装飾） -->
+  <text x="200" y="42" text-anchor="middle" fill="#1e3a3a" font-family="'Hiragino Sans','Yu Gothic UI','Meiryo',sans-serif" font-size="15" font-weight="600">正面図（前方）</text>
+  <!-- 背面図 -->
+  <text x="600" y="42" text-anchor="middle" fill="#1e3a3a" font-family="'Hiragino Sans','Yu Gothic UI','Meiryo',sans-serif" font-size="15" font-weight="600">背面図（後方）</text>
+
+  <!-- 正面: 骨格シルエット -->
+  <g transform="translate(200,280)" filter="url(#soft)">
+    <ellipse cx="0" cy="-90" rx="38" ry="44" fill="#dce7e5" stroke="#94b8b0" stroke-width="1.5"/>
+    <path d="M-55,-30 Q-75,20 -60,95 Q-40,160 -10,200 L10,200 Q40,160 60,95 Q75,20 55,-30 Z" fill="#e8f0ee" stroke="#7da99e" stroke-width="1.5"/>
+    <!-- 鎖骨・肩峰イメージ -->
+    <path d="M-70,-125 Q0,-135 70,-125" fill="none" stroke="#8aa8a0" stroke-width="3" stroke-linecap="round"/>
+    <!-- 上腕骨 -->
+    <path d="M-18,100 L-22,220 L22,220 L18,100 Z" fill="#d5e3df" stroke="#6b9a8e" stroke-width="1.2"/>
+    <!-- 肩甲下筋（前面） -->
+    <path d="M-42,5 Q-52,45 -38,110 Q-10,130 0,125 Q10,130 38,110 Q52,45 42,5 Q20,-25 0,-20 Q-20,-25 -42,5 Z" fill="#2E8B7A" fill-opacity="0.35" stroke="#246B5E" stroke-width="1.2"/>
+  </g>
+
+  <!-- 背面: 肩甲骨・腱板4筋 -->
+  <g transform="translate(600,265)" filter="url(#soft)">
+    <!-- 肩甲骨外形 -->
+    <path d="M0,-130 L35,-95 L48,-20 L55,70 L35,140 L0,165 L-35,140 L-55,70 L-48,-20 L-35,-95 Z" fill="#dce7e5" stroke="#94b8b0" stroke-width="1.5"/>
+    <!-- 棘上筋 -->
+    <path d="M-8,-125 Q0,-140 8,-125 L12,-55 Q0,-48 -12,-55 Z" fill="#2E8B7A" fill-opacity="0.9" stroke="#1B5049" stroke-width="0.8"/>
+    <!-- 棘下筋 -->
+    <path d="M-45,-15 Q-5,-35 45,-15 L50,35 Q0,55 -50,35 Z" fill="#3daa96" fill-opacity="0.75" stroke="#246B5E" stroke-width="0.8"/>
+    <!-- 小円筋 -->
+    <path d="M45,38 Q65,75 35,115 Q15,95 25,55 Z" fill="#5bc4ad" fill-opacity="0.65" stroke="#246B5E" stroke-width="0.8"/>
+    <!-- 上腕骨頭（背面） -->
+    <ellipse cx="0" cy="105" rx="32" ry="36" fill="#e8f0ee" stroke="#7da99e" stroke-width="1.5"/>
+    <!-- 上腕 -->
+    <path d="M-14,138 L-18,240 L18,240 L14,138 Z" fill="#d5e3df" stroke="#6b9a8e" stroke-width="1.2"/>
+  </g>
+
+  <!-- 凡例 -->
+  <g transform="translate(40,380)" font-family="'Hiragino Sans','Yu Gothic UI','Meiryo',sans-serif" font-size="12" fill="#334e4a">
+    <rect x="0" y="0" width="14" height="14" fill="#2E8B7A" rx="2"/>
+    <text x="22" y="12">棘上筋</text>
+    <rect x="110" y="0" width="14" height="14" fill="#3daa96" rx="2" opacity="0.85"/>
+    <text x="132" y="12">棘下筋</text>
+    <rect x="220" y="0" width="14" height="14" fill="#5bc4ad" rx="2" opacity="0.8"/>
+    <text x="242" y="12">小円筋</text>
+    <rect x="330" y="0" width="14" height="14" fill="#2E8B7A" opacity="0.35" rx="2"/>
+    <text x="352" y="12">肩甲下筋（前面）</text>
+  </g>
+  <text x="400" y="498" text-anchor="middle" fill="#5c7a74" font-family="'Hiragino Sans','Yu Gothic UI','Meiryo',sans-serif" font-size="11">模式図のため実際の形状と異なる場合があります</text>
+</svg>

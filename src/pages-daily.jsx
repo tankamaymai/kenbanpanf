@@ -1,59 +1,13 @@
 /* =========================================================
-   Ward life (P9–11) and post-brace life (P12–14)
-   P09 — 寝るときの姿勢
-   P10 — 寝返り・起き上がり
-   P11 — 更衣動作
-   P12 — 外出時休憩できる鞄
-   P13 — 外出時にポケットを利用する
-   P14 — 洗濯物を干す時の対応
+   Ward life and post-brace life
+   P07 — 寝返り・起き上がり
+   P08 — 更衣動作
+   P09 — 外出時の腕の休め方
+   P10 — 洗濯物を干す時の対応
    ========================================================= */
 
-const PageSleep = () => (
-  <Page num={9} kicker="CHAPTER 06 ／ 病棟の生活" title="寝るときの姿勢">
-    {/* ---- コーナーアクセント付き導入文 ---- */}
-    <div className="corner-box">
-      <div className="cb-br" style={{position:"absolute",inset:0,pointerEvents:"none"}}/>
-      外転枕はリハビリや着替え、入浴以外の時間は終日装着となります。<br/>
-      身に着けている時間が長い分、姿勢や動作手順には注意が必要です。<br/>
-      正しいポジショニングを維持することで、肩が安静に保たれ、再断裂を防ぐことが出来ます。
-    </div>
-
-    {/* ---- セクションラベル ---- */}
-    <div className="section-pill">寝るときの姿勢</div>
-
-    {/* ---- 2枚並列 + アノテーション ---- */}
-    <div className="photo-pair">
-      <div className="annotated-photo">
-        <img src="assets/img/sleep-supine.jpg" alt="仰向け・タオル挿入" />
-        <span className="ann-bubble bl">タオルを挟みます</span>
-      </div>
-      <div className="annotated-photo">
-        <img src="assets/img/sleep-gatch.jpg" alt="ギャッチアップ" />
-        <span className="ann-bubble tr">頭部の位置<br/>を調整</span>
-      </div>
-    </div>
-
-    {/* ---- 説明テキスト ---- */}
-    <div className="sleep-textbox">
-      肩に力が入りすぎると、筋肉のこわばりや痛みの原因となります。<br/>
-      肩とベッドの間に枕やタオルを入れることで、身体の接触面積を増やしリラックスした姿勢をつくることができます。<br/>
-      また、ベッドを平らにすると痛みが強くなる場合は、頭元の角度をつけて調整します。
-    </div>
-
-    {/* ---- 横向き写真 ---- */}
-    <div className="bottom-photo-strip">
-      <img src="assets/img/sleep-side.jpg" alt="横向き姿勢" />
-    </div>
-
-    {/* ---- 横向き説明テキスト ---- */}
-    <div className="sleep-textbox">
-      同じ姿勢ばかりでは寝づらい場合は、手術した肩を上にした状態で横向きになります。肩が後退しないよう、背中に枕を当てるなどして姿勢を調整します。
-    </div>
-  </Page>
-);
-
 const PageTurnOver = () => (
-  <Page num={10} kicker="CHAPTER 06 ／ 病棟の生活" title="寝返り・起き上がり" className="ward-page">
+  <Page num={6} kicker="CHAPTER 05 ／ 病棟の生活" title="寝返り・起き上がり" className="page-turnover-fit ward-page">
 
     {/* 01 寝るときの姿勢 */}
     <div className="ward-sec">
@@ -145,12 +99,11 @@ const PageTurnOver = () => (
 );
 
 const PageDressing = () => (
-  <Page num={11} kicker="CHAPTER 06 ／ 病棟の生活" title="更衣動作" className="ward-page">
+  <Page num={7} kicker="CHAPTER 05 ／ 病棟の生活" title="更衣動作" className="page-dressing">
 
-    {/* セクションヘッダー */}
-    <div style={{borderLeft:"4px solid var(--brand-primary)",background:"var(--brand-primary-soft)",borderRadius:"0 6px 6px 0",padding:"6px 14px",marginBottom:4}}>
-      <div style={{fontWeight:800,fontSize:16,color:"var(--neutral-900)"}}>更衣動作のポイント</div>
-      <div style={{fontSize:13,color:"var(--fg-2)",marginTop:2}}>着る時・脱ぐ時の順番を守ることで、肩への負担を減らせます。</div>
+    <div className="dressing-intro-bar">
+      <div className="dib-title">更衣動作のポイント</div>
+      <div className="dib-sub">着る時・脱ぐ時の順番を守ることで、肩への負担を減らせます。</div>
     </div>
 
     {/* 2カラム */}
@@ -223,20 +176,21 @@ const PageDressing = () => (
   </Page>
 );
 const PageBag = () => (
-  <Page num={12} kicker="CHAPTER 07 ／ 外転枕終了後の生活" title="外出時の腕の休め方">
-    <p style={{margin:"0 0 10px", fontSize:"calc(var(--body-size) - 1px)", lineHeight:"var(--body-lh)"}}>
+  <Page num={8} kicker="CHAPTER 06 ／ 外転枕終了後の生活" title="外出時の腕の休め方" className="page-bag-outdoor">
+    <p className="bag-outdoor-lead">
       外転枕を外した後は自宅での生活が中心となります。外出先でも肩・腕が重くつらくなることがあります。
       身の回りの物を上手に使って、肩の負担を軽減しましょう。
     </p>
 
-    <div style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap:16, alignItems:"start"}}>
-      {/* 左：鞄 */}
-      <div>
-        <div className="p4-section-label"><span>ショルダーバッグに腕をのせる</span></div>
+    <div className="bag-outdoor-cols">
+      <div className="bag-outdoor-col bag-outdoor-panel">
+        <div className="bag-outdoor-panel-head">
+          <div className="p4-section-label bag-outdoor-sec-pill"><span>ショルダーバッグに腕をのせる</span></div>
+        </div>
         <PhotoLayout
           photo={
             <img src="assets/img/bag-use.jpg" alt="ショルダーバッグに腕を預ける"
-              style={{width:"100%", borderRadius:10, display:"block"}} />
+              className="bag-outdoor-photo-img"/>
           }
           headline="なぜ鞄に腕をのせるのか？"
           lede="手術した肩・腕が重くつらい時、ショルダーバッグの上に前腕をのせると腕の重みが分散され、痛みがやわらぎます。"
@@ -247,16 +201,22 @@ const PageBag = () => (
           ]} stack/>
       </div>
 
-      {/* 右：ポケット */}
-      <div>
-        <div className="p4-section-label"><span>ポケット・ベルトを活用する</span></div>
-        <Lead>
-          鞄がない時は、<strong>ポケット</strong>や<strong>ベルト</strong>など腕を預けられる場所を使いましょう。
-        </Lead>
-        <div style={{margin:"8px 0 12px", borderRadius:10, overflow:"hidden", background:"var(--neutral-100)", aspectRatio:"4/3", display:"flex", alignItems:"center", justifyContent:"center"}}>
-          <span style={{color:"var(--fg-3)", fontSize:13, fontWeight:600}}>PHOTO ／ ポケット・ベルト活用</span>
+      <div className="bag-outdoor-col bag-outdoor-panel">
+        <div className="bag-outdoor-panel-head">
+          <div className="p4-section-label bag-outdoor-sec-pill"><span>ポケット・ベルトを活用する</span></div>
         </div>
-        <Callout tone="warn" title="痛みがある時は無理しない">
+        <div className="bag-pocket-stack">
+          <div className="bag-pocket-visual" role="img" aria-label="ポケット・ベルト活用の参考写真">
+            <div className="bag-pocket-visual-inner">
+              <span className="bag-pocket-ph-label">PHOTO</span>
+              <span className="bag-pocket-ph-sub">ポケット・ベルト活用</span>
+            </div>
+          </div>
+          <p className="bag-pocket-caption">
+            鞄がない時は、<strong>ポケット</strong>や<strong>ベルト</strong>など腕を預けられる場所を使いましょう。
+          </p>
+        </div>
+        <Callout tone="warn" title="痛みがある時は無理しない" className="bag-outdoor-callout">
           違和感がある場合は無理に入れないでください。外出前に「どこに腕を預けられるか」を想定しておくと安心です。
         </Callout>
       </div>
@@ -265,26 +225,28 @@ const PageBag = () => (
 );
 
 const PageLaundry = () => (
-  <Page num={13} kicker="CHAPTER 07 ／ 外転枕終了後の生活" title="洗濯物を干す時の対応">
-    <PhotoDuo items={[
-      { label:"BEFORE", placeholder:"PHOTO ／ S字フックで低位置",
-        title:"① 低い位置で干す",
-        desc:"S字フックやハンガー掛けを物干し竿につなげて、胸〜腰の高さまで下ろします。この高さでハンガーに洗濯物を通します。" },
-      { label:"AFTER", placeholder:"PHOTO ／ 健側で物干しへ戻す",
-        title:"② 痛くない手で戻す",
-        desc:"全部干し終わってから、痛くない方の手でハンガー掛けごと物干し竿まで持ち上げます。" },
-    ]}/>
+  <Page num={9} kicker="CHAPTER 06 ／ 外転枕終了後の生活" title="洗濯物を干す時の対応" className="page-laundry">
+    <div className="laundry-editorial">
+      <PhotoDuo items={[
+        { label:"BEFORE", placeholder:"PHOTO ／ S字フックで低位置",
+          title:"① 低い位置で干す",
+          desc:"S字フックやハンガー掛けを物干し竿につなげて、胸〜腰の高さまで下ろします。この高さでハンガーに洗濯物を通します。" },
+        { label:"AFTER", placeholder:"PHOTO ／ 健側で物干しへ戻す",
+          title:"② 痛くない手で戻す",
+          desc:"全部干し終わってから、痛くない方の手でハンガー掛けごと物干し竿まで持ち上げます。" },
+      ]}/>
 
-    <div className="grid-2" style={{marginTop:12}}>
-      <Callout tone="ok" title="OK ─ こうすれば肩に負担が少ない">
-        S字フック・ハンガー掛けで低位置／干し終えてから持ち上げ／大物はご家族にお願いする。
-      </Callout>
-      <Callout tone="warn" title="NG ─ 変な癖がつきます">
-        無理に高い位置で干そうとすると、<strong>かばって動かす癖</strong>がついてしまい、
-        正しい動きを取り戻しにくくなります。リハビリで可動域が戻ってから徐々に。
-      </Callout>
+      <div className="grid-2 laundry-callouts">
+        <Callout tone="ok" title="OK ─ こうすれば肩に負担が少ない">
+          S字フック・ハンガー掛けで低位置／干し終えてから持ち上げ／大物はご家族にお願いする。
+        </Callout>
+        <Callout tone="warn" title="NG ─ 変な癖がつきます">
+          無理に高い位置で干そうとすると、<strong>かばって動かす癖</strong>がついてしまい、
+          正しい動きを取り戻しにくくなります。リハビリで可動域が戻ってから徐々に。
+        </Callout>
+      </div>
     </div>
   </Page>
 );
 
-Object.assign(window, { PageSleep, PageTurnOver, PageDressing, PageBag, PageLaundry });
+Object.assign(window, { PageTurnOver, PageDressing, PageBag, PageLaundry });

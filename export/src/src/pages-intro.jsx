@@ -43,49 +43,49 @@ const PageHello = () => (
 );
 
 const PageAnatomy = () => (
-  <Page num={3} kicker="CHAPTER 02 ／ 肩関節と腱板" title="肩関節と腱板について">
+  <Page num={3} kicker="CHAPTER 02 ／ 肩関節と腱板" title="肩関節と腱板について" className="page-anatomy-compact">
     <Lead>
       肩関節は、<strong>上腕骨</strong>と<strong>肩甲骨</strong>の2つの骨で構成されています。
       腱板（けんばん）は、この肩甲骨と上腕骨をつないでいる腱（すじ）で、<strong>4つの筋肉</strong>が束になってできています。
     </Lead>
 
-    {/* 3枚の解剖画像を横並び */}
-    <div style={{display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:12, margin:"8px 0 16px"}}>
-      <figure style={{margin:0}}>
-        <img src={window.__resources.anatFrontBone} alt="正面図（骨）"
-          style={{width:"100%", borderRadius:8, background:"#fff", display:"block"}} />
-        <figcaption style={{textAlign:"center", fontSize:12, color:"var(--fg-2)", marginTop:6, fontWeight:600}}>
-          【正面図】骨格
-        </figcaption>
+    <div className="anatomy-photos-grid">
+      <figure>
+        <img src="assets/img/anatomy-front-bone.jpg" alt="正面図（骨）" />
+        <figcaption>【正面図】骨格</figcaption>
       </figure>
-      <figure style={{margin:0}}>
-        <img src={window.__resources.anatFrontMuscle} alt="正面図（肩甲下筋）"
-          style={{width:"100%", borderRadius:8, background:"#fff", display:"block"}} />
-        <figcaption style={{textAlign:"center", fontSize:12, color:"var(--fg-2)", marginTop:6, fontWeight:600}}>
-          【正面図】肩甲下筋
-        </figcaption>
+      <figure>
+        <img src="assets/img/anatomy-front-muscle.jpg" alt="正面図（肩甲下筋）" />
+        <figcaption>【正面図】肩甲下筋</figcaption>
       </figure>
-      <figure style={{margin:0}}>
-        <img src={window.__resources.anatBackMuscle} alt="背面図（棘上筋・棘下筋・小円筋）"
-          style={{width:"100%", borderRadius:8, background:"#fff", display:"block"}} />
-        <figcaption style={{textAlign:"center", fontSize:12, color:"var(--fg-2)", marginTop:6, fontWeight:600}}>
-          【背面図】棘上筋・棘下筋・小円筋
-        </figcaption>
+      <figure>
+        <img src="assets/img/anatomy-back-muscle.jpg" alt="背面図（棘上筋・棘下筋・小円筋）" />
+        <figcaption>【背面図】棘上筋・棘下筋・小円筋</figcaption>
       </figure>
     </div>
 
-    <div className="grid-2" style={{gap:16, alignItems:"start"}}>
-      <div>
-        <Subhead en="ROTATOR CUFF">腱板を構成する4つの筋肉</Subhead>
-        <dl className="kv">
-          <dt>棘上筋（きょくじょうきん）</dt><dd>腕を横に上げる動き。最も断裂しやすい筋肉。</dd>
-          <dt>棘下筋（きょくかきん）</dt><dd>腕を外側にひねる（外旋）動き。</dd>
-          <dt>小円筋（しょうえんきん）</dt><dd>棘下筋と共に外旋を助ける。</dd>
-          <dt>肩甲下筋（けんこうかきん）</dt><dd>腕を内側にひねる（内旋）動き。</dd>
+    <div className="anatomy-cuff-block">
+      <Subhead en="ROTATOR CUFF">腱板を構成する4つの筋肉</Subhead>
+      <div className="anatomy-cuff-grid">
+        <dl className="anatomy-cuff-kv-unified">
+          <div className="anatomy-cuff-pair">
+            <dt><span className="anatomy-cuff-num" aria-hidden="true">1</span>棘上筋（きょくじょうきん）</dt>
+            <dd>腕を横に上げる動きに関与。腱板の中で<strong>最も断裂しやすい</strong>筋肉です。</dd>
+          </div>
+          <div className="anatomy-cuff-pair">
+            <dt><span className="anatomy-cuff-num" aria-hidden="true">2</span>棘下筋（きょくかきん）</dt>
+            <dd>腕を外側にひねる（外旋）動きの主役のひとつです。</dd>
+          </div>
+          <div className="anatomy-cuff-pair">
+            <dt><span className="anatomy-cuff-num" aria-hidden="true">3</span>小円筋（しょうえんきん）</dt>
+            <dd>棘下筋と協働し、外旋を支えます。</dd>
+          </div>
+          <div className="anatomy-cuff-pair">
+            <dt><span className="anatomy-cuff-num" aria-hidden="true">4</span>肩甲下筋（けんこうかきん）</dt>
+            <dd>肩の前面にあり、腕を内側にひねる（内旋）動きに関与します。</dd>
+          </div>
         </dl>
-      </div>
-      <div>
-        <Callout tone="info" title="腱板の役割">
+        <Callout tone="info" title="腱板の役割" className="anatomy-cuff-callout">
           腱板は肩関節を安定させる「インナーマッスル」です。
           この4つの筋肉が協調して働くことで、肩の複雑な動きが可能になります。
           断裂すると腕が上がりにくくなったり、夜間痛が生じたりします。
@@ -96,119 +96,116 @@ const PageAnatomy = () => (
 );
 
 const PagePathology = () => (
-  <section className="page" data-screen-label="04 再断裂について" style={{padding:"40px 52px 60px", background:"#fff"}}>
-    {/* 葉デコレーション */}
-    <span className="leaf-corner tr"><LeafSVG size={52}/></span>
-    <span className="leaf-corner br"><LeafSVG size={44}/></span>
+  <Page num={4} kicker="CHAPTER 03 ／ 再断裂について" title="なぜ再断裂に注意が必要？" className="p4-page">
 
-    {/* 上部 警告バナー */}
-    <div className="p4-warn-banner">
-      <span className="icon">⚠️</span>
-      術後の過ごし方で、<strong>再断裂のリスクが変わります</strong>
-    </div>
-
-    {/* チャプターバッジ */}
-    <div className="p4-chapter-badge">
-      <div className="ch-ring">
-        <span className="ch-label">チャプター</span>
-        <span className="ch-num">04</span>
-      </div>
-    </div>
-
-    {/* 大タイトル */}
-    <h2 className="p4-big-title">なぜ再断裂に注意が必要？</h2>
-    <div className="p4-subtitle">術後しばらくは、腱がまだ弱い時期です</div>
-
-    {/* 赤い警告ボックス */}
-    <div className="p4-alert-box">
-      <span className="a-icon">⚠️</span>
-      手術が終わり＝治った、ではありません
-    </div>
-
-    {/* 本文テキスト */}
-    <p className="p4-body-text">
-      術後しばらくの期間は、縫合した腱がしっかりとくっついておらず、<br/>
-      強い力や負担がかかると再び断裂してしまう可能性があります。
-    </p>
-
-    {/* ティールアドバイスカード */}
-    <div className="p4-advice-card">
-      <div className="av-icon">🛡</div>
-      <div className="av-text">
-        回復を急がず、<br/>
-        肩を守りながら少しずつ進めましょう。<span className="av-leaf">🌿</span>
-      </div>
-    </div>
-
-    {/* セクションラベル */}
-    <div className="p4-section-label">
-      <span>再断裂のリスクを高める行動例</span>
-    </div>
-
-    {/* 3列リスクカード */}
-    <div className="p4-risk-grid">
-      <div className="p4-risk-card">
-        <div className="rc-header">01</div>
-        <div className="rc-img">
-          <span>ILLUSTRATION</span>
-          <div className="x-mark">✕</div>
+    <div className="p4-hero-grid">
+      <div className="p4-hero-main">
+        <p className="p4-lede">
+          術後の過ごし方ひとつで、<strong>再断裂のリスクは大きく変わります</strong>。
+        </p>
+        <div className="p4-key-message" role="note">
+          <span className="p4-key-label">意識してほしいこと</span>
+          <p className="p4-key-text">手術が終わったからといって、すぐに「治った」と考えないでください。</p>
         </div>
-        <div className="rc-title">脇を閉じすぎる</div>
-        <div className="rc-desc">腱の縫合部で肩に負担がかかり、再断裂のリスクが高まります。</div>
-      </div>
-      <div className="p4-risk-card">
-        <div className="rc-header">02</div>
-        <div className="rc-img">
-          <span>ILLUSTRATION</span>
-          <div className="x-mark">✕</div>
+        <p className="p4-body-text">
+          術後しばらくは、縫合した腱が骨にしっかり定着するまでの時期です。
+          強い力や不適切な動きが加わると、再び断裂してしまうことがあります。
+        </p>
+        <div className="p4-advice-card">
+          <div className="av-icon" aria-hidden="true" />
+          <div className="av-text">
+            回復を急がず、装具と生活のルールを守りながら少しずつ進めましょう。
+          </div>
         </div>
-        <div className="rc-title">自力で無理に動かす</div>
-        <div className="rc-desc">腕に過度な力がかかり、再断裂のリスクが高まります。</div>
       </div>
-      <div className="p4-risk-card">
-        <div className="rc-header">03</div>
-        <div className="rc-img">
-          <span>ILLUSTRATION</span>
-          <div className="x-mark">✕</div>
+
+      <figure className="p4-hero-aside">
+        <div className="p4-media-frame">
+          <img
+            className="p4-media-img"
+            src="assets/img/p04-editorial-placeholder.svg"
+            alt=""
+          />
         </div>
-        <div className="rc-title">重い物を持つ</div>
-        <div className="rc-desc">肩や腱に大きな負担がかかり、再断裂のリスクが高まります。</div>
+        <figcaption className="p4-media-cap">
+          メインビジュアル（写真・イラスト）は差し替え可能です。差替え時は <code className="p4-code">assets/img/p04-hero.jpg</code> などに変更してください。
+        </figcaption>
+      </figure>
+    </div>
+
+    <div className="p4-risk-section">
+      <h3 className="p4-section-heading">再断裂のリスクを高めやすい行動例</h3>
+      <p className="p4-section-note">各カードのグレー枠内に、写真・図解を配置すると伝わりやすくなります。</p>
+
+      <div className="p4-risk-grid">
+        <article className="p4-risk-card">
+          <div className="rc-top">
+            <span className="rc-num">01</span>
+            <span className="rc-avoid">避けたい</span>
+          </div>
+          <div className="rc-media" data-label="図・写真スペース" />
+          <div className="rc-body">
+            <div className="rc-title">脇を閉じすぎる</div>
+            <p className="rc-desc">縫合部に負担がかかり、再断裂のリスクが高まります。</p>
+          </div>
+        </article>
+        <article className="p4-risk-card">
+          <div className="rc-top">
+            <span className="rc-num">02</span>
+            <span className="rc-avoid">避けたい</span>
+          </div>
+          <div className="rc-media" data-label="図・写真スペース" />
+          <div className="rc-body">
+            <div className="rc-title">自力で無理に動かす</div>
+            <p className="rc-desc">腕に過度な力がかかり、再断裂のリスクが高まります。</p>
+          </div>
+        </article>
+        <article className="p4-risk-card">
+          <div className="rc-top">
+            <span className="rc-num">03</span>
+            <span className="rc-avoid">避けたい</span>
+          </div>
+          <div className="rc-media" data-label="図・写真スペース" />
+          <div className="rc-body">
+            <div className="rc-title">重い物を持つ</div>
+            <p className="rc-desc">肩や腱に大きな負担がかかり、再断裂のリスクが高まります。</p>
+          </div>
+        </article>
       </div>
     </div>
 
-    {/* 大切なことボックス */}
-    <div className="p4-important-box">
-      <div className="ib-badge">大切な<br/>こと</div>
-      <div className="ib-text">
-        決められた装具の位置や生活動作を守ることが、回復の近道です。
+    <div className="p4-foot-card">
+      <div className="p4-foot-inner">
+        <span className="p4-foot-badge">まとめ</span>
+        <p className="p4-foot-text">決められた装具の位置や生活動作を守ることが、回復の近道です。</p>
       </div>
     </div>
 
-    {/* フッター */}
-    <footer className="page-foot no-select">
-      <span className="pf-title">新小文字病院 整形外科・リハビリテーション科</span>
-      <span className="pf-num">04</span>
-    </footer>
-  </section>
+  </Page>
 );
 
 const PageSurgery = () => (
-  <Page num={5} kicker="CHAPTER 04 ／ 手術" title="手術について">
+  <Page num={5} kicker="CHAPTER 04 ／ 手術" title="手術について" className="p5-page">
     <Lead>
       手術では<strong>4〜5か所</strong>、数mm〜1cmほど皮膚を切開し、直径5mmほどの<strong>内視鏡（関節鏡）</strong>や手術器具を挿入して行います。
       切開が小さく、体への負担が少ないのが特徴です。
     </Lead>
 
-    <div className="grid-a45">
-      <div>
-        <PhotoCard src={window.__resources.wound} title="手術創部の一例" ratio="4/3" objectPosition="center 45%">
-          小さな穴が数ヶ所あるのが関節鏡手術の特徴です。内出血（うっすらとした黄〜紫色）は
-          <strong>1〜2週間</strong>ほどで自然に消えていきます。
-        </PhotoCard>
+    <figure className="p5-intraop-figure">
+      <div className="p5-intraop-frame">
+        <img
+          className="p5-intraop-img"
+          src="assets/img/p05-surgery-intraop-placeholder.svg"
+          alt=""
+        />
       </div>
-      <div>
+      <figcaption className="p5-intraop-cap">手術中の様子の画像</figcaption>
+    </figure>
+
+    <div className="p5-lower-stack">
+      <div className="p5-lower-text">
         <Subhead en="PROCEDURE">手術の要点</Subhead>
-        <dl className="kv" style={{marginBottom:14}}>
+        <dl className="kv p5-kv">
           <dt>手術名</dt><dd>関節鏡下腱板修復術（ARCR）</dd>
           <dt>切開</dt><dd>4〜5か所／数mm〜1cm</dd>
           <dt>器具</dt><dd>直径5mmほどの内視鏡（関節鏡）</dd>
@@ -222,6 +219,17 @@ const PageSurgery = () => (
           赤みが強くなる／膿が出る／38℃以上の発熱／痛みが急に増した
           ─ これらは感染のサインかもしれません。様子をみず、外来までお電話ください。
         </Callout>
+      </div>
+      <div className="p5-lower-photo">
+        <PhotoCard
+          src="assets/img/wound.jpg"
+          title="手術創部の一例"
+          ratio="16/9"
+          objectPosition="center 45%"
+        >
+          小さな穴が数ヶ所あるのが関節鏡手術の特徴です。内出血（うっすらとした黄〜紫色）は
+          <strong>1〜2週間</strong>ほどで自然に消えていきます。
+        </PhotoCard>
       </div>
     </div>
   </Page>

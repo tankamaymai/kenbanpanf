@@ -96,19 +96,16 @@ const CoverV3 = () => (
           <div className="toc-item"><span className="toc-num">02</span><span className="toc-title">肩関節と腱板について</span><span className="toc-page">P.03</span></div>
           <div className="toc-item"><span className="toc-num">03</span><span className="toc-title">腱板断裂の病態／再断裂について</span><span className="toc-page">P.04</span></div>
           <div className="toc-item"><span className="toc-num">04</span><span className="toc-title">手術について</span><span className="toc-page">P.05</span></div>
-          <div className="toc-item"><span className="toc-num">05</span><span className="toc-title">外転枕の役割とルール</span><span className="toc-page">P.06</span></div>
-          <div className="toc-item"><span className="toc-num">06</span><span className="toc-title">外転枕の装着（正面・側面）</span><span className="toc-page">P.07</span></div>
-          <div className="toc-item"><span className="toc-num">07</span><span className="toc-title">外転枕の装着（背面・着脱）</span><span className="toc-page">P.08</span></div>
-          <div className="toc-item"><span className="toc-num">08</span><span className="toc-title">病棟の生活｜寝るときの姿勢</span><span className="toc-page">P.09</span></div>
-          <div className="toc-item"><span className="toc-num">09</span><span className="toc-title">病棟の生活｜寝返り・起き上がり</span><span className="toc-page">P.10</span></div>
-          <div className="toc-item"><span className="toc-num">10</span><span className="toc-title">病棟の生活｜更衣動作</span><span className="toc-page">P.11</span></div>
-          <div className="toc-item"><span className="toc-num">11</span><span className="toc-title">外転枕終了後｜休憩できる鞄</span><span className="toc-page">P.12</span></div>
-          <div className="toc-item"><span className="toc-num">12</span><span className="toc-title">外転枕終了後｜ポケットの活用</span><span className="toc-page">P.13</span></div>
-          <div className="toc-item"><span className="toc-num">13</span><span className="toc-title">外転枕終了後｜洗濯物を干す</span><span className="toc-page">P.14</span></div>
-          <div className="toc-item"><span className="toc-num">14</span><span className="toc-title">自主トレ ①振り子・握力</span><span className="toc-page">P.15</span></div>
-          <div className="toc-item"><span className="toc-num">15</span><span className="toc-title">自主トレ ②他動可動域</span><span className="toc-page">P.16</span></div>
-          <div className="toc-item"><span className="toc-num">16</span><span className="toc-title">自主トレ ③自動・筋力</span><span className="toc-page">P.17</span></div>
-          <div className="toc-item"><span className="toc-num">17</span><span className="toc-title">Q&amp;A よくあるご質問</span><span className="toc-page">P.18</span></div>
+          <div className="toc-item"><span className="toc-num">05</span><span className="toc-title">外転枕の役割・ルールと装着（OK／NG）</span><span className="toc-page">P.06</span></div>
+          <div className="toc-item"><span className="toc-num">06</span><span className="toc-title">病棟の生活｜寝返り・起き上がり</span><span className="toc-page">P.07</span></div>
+          <div className="toc-item"><span className="toc-num">07</span><span className="toc-title">病棟の生活｜更衣動作</span><span className="toc-page">P.08</span></div>
+          <div className="toc-item"><span className="toc-num">08</span><span className="toc-title">外転枕終了後｜休憩できる鞄</span><span className="toc-page">P.09</span></div>
+          <div className="toc-item"><span className="toc-num">09</span><span className="toc-title">外転枕終了後｜ポケットの活用</span><span className="toc-page">P.10</span></div>
+          <div className="toc-item"><span className="toc-num">10</span><span className="toc-title">外転枕終了後｜洗濯物を干す</span><span className="toc-page">P.11</span></div>
+          <div className="toc-item"><span className="toc-num">11</span><span className="toc-title">自主トレ ①振り子・握力</span><span className="toc-page">P.12</span></div>
+          <div className="toc-item"><span className="toc-num">12</span><span className="toc-title">自主トレ ②他動可動域</span><span className="toc-page">P.13</span></div>
+          <div className="toc-item"><span className="toc-num">13</span><span className="toc-title">自主トレ ③自動・筋力</span><span className="toc-page">P.14</span></div>
+          <div className="toc-item"><span className="toc-num">14</span><span className="toc-title">Q&amp;A よくあるご質問</span><span className="toc-page">P.15</span></div>
         </div>
       </div>
     </div>

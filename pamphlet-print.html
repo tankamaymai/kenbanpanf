@@ -22,7 +22,8 @@
         background: #fff !important;
         padding: 0 !important;
         margin: 0 !important;
-        display: block !important;
+        display: flex !important;
+        flex-direction: column !important;
         width: 210mm !important;
       }
 
@@ -58,6 +59,11 @@
       .page:last-of-type {
         page-break-after: auto !important;
         break-after: auto !important;
+      }
+
+      .page-content {
+        overflow: hidden !important;
+        overflow-y: hidden !important;
       }
 
       /* Cover variants */
@@ -96,7 +102,9 @@
       .p4-advice-card,
       .okng-layout,
       .photo-step,
-      .qa-item {
+      .qa-item,
+      .anatomy-cuff-kv-unified,
+      .anatomy-cuff-grid .callout {
         break-inside: avoid !important;
         page-break-inside: avoid !important;
       }
