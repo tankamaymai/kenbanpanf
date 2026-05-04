@@ -93,8 +93,8 @@ const CoverV3 = () => (
         </div>
         <div className="toc">
           <div className="toc-item"><span className="toc-num">01</span><span className="toc-title">はじめに</span><span className="toc-page">P.02</span></div>
-          <div className="toc-item"><span className="toc-num">02</span><span className="toc-title">肩関節・腱板と再断裂について</span><span className="toc-page">P.03</span></div>
-          <div className="toc-item"><span className="toc-num">03</span><span className="toc-title">手術について</span><span className="toc-page">P.04</span></div>
+          <div className="toc-item"><span className="toc-num">02</span><span className="toc-title">肩関節と腱板について</span><span className="toc-page">P.03</span></div>
+          <div className="toc-item"><span className="toc-num">03</span><span className="toc-title">手術と再断裂予防について</span><span className="toc-page">P.04</span></div>
           <div className="toc-item"><span className="toc-num">04</span><span className="toc-title">外転枕の役割・ルールと装着（OK／NG）</span><span className="toc-page">P.05</span></div>
           <div className="toc-item"><span className="toc-num">05</span><span className="toc-title">病棟の生活｜寝返り・起き上がり</span><span className="toc-page">P.06</span></div>
           <div className="toc-item"><span className="toc-num">06</span><span className="toc-title">病棟の生活｜更衣動作</span><span className="toc-page">P.07</span></div>
