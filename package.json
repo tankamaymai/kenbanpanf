@@ -1,6 +1,10 @@
 {
   "private": true,
   "type": "module",
+  "scripts": {
+    "export:images": "node scripts/export-pages-to-images.cjs",
+    "extract:prompts": "node scripts/extract-text-and-prompts.cjs"
+  },
   "devDependencies": {
     "playwright": "1.50.1"
   }
